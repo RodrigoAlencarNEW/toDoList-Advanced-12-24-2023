@@ -1,0 +1,280 @@
+:root {
+    --borderLine-color: rgba(255, 255, 255, 0.438);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    background-color: #02020f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 2rem;    
+}
+
+.bgImg {
+    opacity: .3;
+    position: absolute;
+    z-index: -1;
+    background-position: center;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    filter: grayscale(90%) blur(2px);
+}
+
+.containerTodo {
+    color: white;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: rgb(46, 44, 54);
+    padding: 1rem;
+    border-radius: 5px;
+    outline: 2px solid rgba(0, 153, 255, 0.404);
+}
+
+.headerToDo {
+    padding: 1rem;
+    width: 100% !important;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--borderLine-color);
+}
+
+.headerToDo h1 {
+    font-weight: lighter;
+}
+
+.btnRandom {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.form-control {
+    padding: .7rem;
+}
+
+.form-control p {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-control input {
+    width: 70%;
+    height: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    outline: none;
+    padding: 0 .7rem;
+    border-radius: 2px;
+}
+
+#btnAddTask, #btnSearchTask {
+
+    flex: 1;
+}
+
+.form-control button {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
+    border: 1px solid var(--borderLine-color);
+    outline: none;
+    cursor: pointer;
+    opacity: .8;
+    color: white;
+    background-color: rgb(252, 71, 71);
+    border-radius: 2px;
+}
+
+.form-control select {
+    height: 2rem;
+    outline: none;
+    width: 100% !important;
+    border-radius: 2px;
+    border: none;
+    background-color: #242323;
+    color: white;
+    padding: 0.4rem;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.selections {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #242323;
+    border-radius: 2px;
+}
+
+.form-control button:hover {
+    opacity: 1;
+}
+
+#addTask .form-control, #editTask .form-control {
+    border-bottom: 1px solid var(--borderLine-color);
+}
+
+.btnCancelEdit {
+    background-color: rgba(255, 255, 255, 0.527) !important;
+    border: 1px solid var(--borderLine-color);
+    outline: none;
+    width: auto !important;
+    cursor: pointer;
+    opacity: .8;
+    color: white;
+    height: 2rem;
+    padding: 0 1rem;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btnCancelEdit:hover {
+    opacity: 1;
+}
+
+#searchTask {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--borderLine-color);
+    margin-bottom: 1rem;
+}
+
+#filterTask {
+    flex: 1;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--borderLine-color);
+    padding: 0.5rem;
+}
+
+.list:nth-last-of-type(1) {
+    border: none;
+    margin-bottom: none;
+    background-color: #242323;
+    border-radius: 10px;
+}
+
+.todo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--borderLine-color);
+}
+
+.todo h3 {
+    font-size: 1rem;
+    flex: 1;
+}
+
+.todo button {
+    margin-left: 0.5rem;
+}
+
+.todoTasks {
+    display: inline-block;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;  
+    outline: none; 
+    gap: 0.5rem;
+    border: none;
+    border-radius: 10px;
+}
+
+.search {
+    flex-basis: 10rem !important;
+    flex: 1;
+}
+
+.checkList {
+    opacity: .7;
+    transition: all .2s;
+}
+
+.checkList:hover {
+    opacity: 1;
+    background-color: rgb(66, 202, 127)
+}
+
+.removeList {
+    opacity: .7;
+    transition: all .2s;
+}
+
+.removeList:hover {
+    background-color: rgb(250, 51, 51);
+    opacity: 1;
+}
+
+.editList {    
+    opacity: .7;
+    transition: all .2s;
+}
+
+.editList:hover {
+    background-color: rgb(49, 180, 255);
+    opacity: 1;
+}
+
+.checkList:hover, .editList:hover, .removeList:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.active {
+    opacity: 1;
+    border: #10e3ff 3px solid;
+    background-color: rgb(82, 255, 47)
+}
+
+.done {
+    text-decoration: line-through;
+    opacity: .5;
+}
+
+i {
+    pointer-events: none;
+}
+
+.hide {
+    display: none;
+}
+
+.error {
+    border: 1px solid red !important;
+}
+
+#error {
+    margin: 3px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: red !important;
+    border: none !important;
+}
